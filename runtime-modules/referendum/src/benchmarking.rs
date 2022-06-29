@@ -694,19 +694,6 @@ mod tests {
     use crate::mock::{build_test_externalities, default_genesis_config, Runtime};
     use frame_support::assert_ok;
 
-    impl
-        OptionCreator<
-            <Runtime as frame_system::Trait>::AccountId,
-            <Runtime as common::membership::MembershipTypes>::MemberId,
-        > for Runtime
-    {
-        fn create_option(
-            _: <Runtime as frame_system::Trait>::AccountId,
-            _: <Runtime as common::membership::MembershipTypes>::MemberId,
-        ) {
-        }
-    }
-
     #[test]
     fn test_vote() {
         let config = default_genesis_config();
